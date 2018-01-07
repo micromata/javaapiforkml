@@ -12,6 +12,7 @@ final class NamespaceFilterHandler
 
     private final static String KML_20 = "http://earth.google.com/kml/2.0";
     private final static String KML_21 = "http://earth.google.com/kml/2.1";
+    private final static String E_KML_22 = "http://earth.google.com/kml/2.2";
     private final static String KML_22 = "http://www.opengis.net/kml/2.2";
     private ContentHandler contentHandler;
 
@@ -22,7 +23,7 @@ final class NamespaceFilterHandler
     public void startElement(String uri, String localName, String qName, Attributes atts)
         throws SAXException
     {
-        if (uri.equals(KML_20)||uri.equals(KML_21)) {
+        if (uri.equals(KML_20)||uri.equals(KML_21)||uri.equals(E_KML_22)) {
             contentHandler.startElement(KML_22, localName, qName, atts);
         } else {
             contentHandler.startElement(uri, localName, qName, atts);

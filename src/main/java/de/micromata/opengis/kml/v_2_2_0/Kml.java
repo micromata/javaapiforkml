@@ -958,6 +958,9 @@ public class Kml implements Cloneable
          */
         @Override
         public String getPreferredPrefix(String namespaceUri, String suggestion, boolean requirePrefix) {
+            if (namespaceUri.matches("http://www.opengis.net/kml/.*?")) {
+            	return "";
+            }
             if (namespaceUri.matches("http://www.w3.org/\\d{4}/Atom")) {
                 return "atom";
             }

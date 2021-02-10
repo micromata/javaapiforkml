@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.micromata.jak</groupId>
 	<artifactId>JavaAPIforKml</artifactId>
-	<version>2.2.1-SNAPSHOT</version>
+	<version>2.3.0-SNAPSHOT</version>
 	<name>a Java API for Kml</name>
 	<description>This is JavaAPIforKMml, Micromata's library for use with applications that want to parse, generate and operate on KML. It is an implementation of the OGC KML 2.2 standard. It is written entirely in Java and makes heavy use of JAXB.</description>
 	<packaging>jar</packaging>
@@ -129,33 +129,39 @@
 			</extension>
 		</extensions>
 	</build>
+	<properties>
+		<jaxb.version>2.3.3</jaxb.version>
+		<log4j.version>1.2.17</log4j.version>
+		<junit.version>4.13.1</junit.version>
+		<xmlunit.version>1.6</xmlunit.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
-			<version>2.2</version>
+			<version>${jaxb.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-xjc</artifactId>
-			<version>2.2</version>
+			<version>${jaxb.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
+			<version>${log4j.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.5</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>xmlunit</groupId>
 			<artifactId>xmlunit</artifactId>
-			<version>1.2</version>
+			<version>${xmlunit.version}</version>
       <scope>test</scope>
 		</dependency>
 		<!--
